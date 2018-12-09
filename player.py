@@ -249,7 +249,7 @@ class Player(object):
         user_selection=int(input())
         while(user_selection!=0):
             print(option_table[user_selection],"\n")
-            print ("select a pokemon to feed candy/startdust or not:  \n"
+            print ("select a pokemon to feed candy/stardust or not:  \n"
                    "use # + space + pokemon_number+ space + candyNumber to feed a pokemon")
             user_selection=input("\nSelect a pokemon to show details (enter number, 0 to go back):")
 
