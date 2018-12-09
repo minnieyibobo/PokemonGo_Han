@@ -17,7 +17,7 @@ c.execute("CREATE TABLE players (\
             PRIMARY KEY (player_name))")
 """
 
-# create a table for fighting
+# Han added: create a table for fighting
 c.execute("DROP TABLE active_players")
 c.execute("CREATE TABLE active_players (\
             player_name varchar (20) NOT NULL,\

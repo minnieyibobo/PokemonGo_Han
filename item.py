@@ -92,12 +92,12 @@ class PokeBall(Item):
             self.catch_rate = 0.85
         else:
             self.catch_rate = 0.50
-            
+
     def invoked(self,player):
         pokemon=player.encountering_pokemon[0]
         print("~~~~~~~~~~~~~~~~~~~~~O~~~~~~~~~~~~~~")
 
-        # === added code below
+        # === Han added code below
         CP_THRESH = 300;
         catch=random.uniform(0,1)
         if (pokemon.cp > CP_THRESH):

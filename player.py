@@ -180,7 +180,6 @@ class Player(object):
                     self.encountering_pokemon.remove(pokemon) 
                 else:
                     print("There's no",item_option_table[user_command],"left! Choose other items")
-                  
         else:
              print("You entered a wrong number! Please try again.")     
 
@@ -233,6 +232,7 @@ class Player(object):
             input('Press 0/1 to continue, press 2 to exit')
             move = int(input())
 
+
     def visit_pokestop(self):
         pass                   
     
@@ -249,7 +249,21 @@ class Player(object):
         user_selection=int(input())
         while(user_selection!=0):
             print(option_table[user_selection],"\n")
-            user_selection=int(input("\nSelect a pokemon to show details (enter number, 0 to go back):"))
+            print ("select a pokemon to feed candy/startdust or not:  \n"
+                   "use # + space + pokemon_number+ space + candyNumber to feed a pokemon")
+            user_selection=input("\nSelect a pokemon to show details (enter number, 0 to go back):")
+
+            if('#' in user_selection):
+                user_selection = user_selection.split(" ")
+                pokemonNum, candyNum = int(user_selection[1]), int(user_selection[2])
+                toFeedPokemon = self.pokemons_in_hand[pokemonNum-1]
+                print ("Now you are feeding " + toFeedPokemon.name + " " + str(candyNum) +" candies/startdust \n"
+                      "the pokemon is trying to evolve if possible")
+                toFeedPokemon.evolve()
+                user_selection = 0
+            else:
+                user_selection = 0
+
         
                                             
 class Bag(object):
