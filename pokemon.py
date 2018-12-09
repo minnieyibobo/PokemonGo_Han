@@ -217,8 +217,11 @@ def generate_pokemon_by_name(name_str):
             name=pokemon_entries[id]["name"]
             type1=pokemon_entries[id]["type1"]
             type2=pokemon_entries[id]["type2"]
-            fast_move=pokemon_entries[id]["fast_move"]
-            special_move=pokemon_entries[id]["special_move"]
+            fast_move, special_move = "", ""
+            if("fast_move" in pokemon_entries[id]):
+                fast_move=pokemon_entries[id]["fast_move"]
+            if("special_move" in pokemon_entries[id]):
+                special_move=pokemon_entries[id]["special_move"]
             catch_chance=pokemon_entries[id]["catch_chance"]
                 
             #random attributes:
